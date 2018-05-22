@@ -7,39 +7,49 @@
 //
 
 import Foundation
+var expectedLines = 3
 
 // INPUT
 var n = 0
 while 1 == 1 {
+    print("How many phone numbers will be provided?")
     
-    // Make sure input is not nil
-    guard let givenString = readLine() else{
-        //Prompt again if nil
+    let input = readLine()
+    guard let givenInput = input else {
+        continue
+    }
+    
+    guard let integerInput = Int(givenInput) else {
         continue
     }
     
     // Is input in the correct length range?
-    if givenString.count < 1 || givenString.count > 10 {
+    if integerInput < 1 || integerInput > 10 {
         continue
     }
+    expectedLines = integerInput
+    
+    break
+}
 
 
 // Global variable to track how many phone numbers we can expect from the user
 
-var expectedLines = 3
     
 // Add code below to ask the user for how many phones numbers will actually be provided
-print("How many phone numbers will be provided?")
+
     
 
 // PROCESS & OUTPUT
 // Implement the primary logic of the problem here
 
 // Collect the phone numbers
-for n in 1...expectedLines {
+
         
     // Create the translated phone number
     var translatedPhoneNumber = ""
+    
+    for n in 1...expectedLines {
     // Prompt the user
     print("Enter phone number \(n):")
     
@@ -76,5 +86,5 @@ for n in 1...expectedLines {
     
 
 }
-}
+
 
